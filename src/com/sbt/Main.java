@@ -13,6 +13,7 @@ public class Main {
         womanElise.marry(manEgor);
         manIgor.marry(womanElise);
         manEgor.marry(manIgor);
+        //commit
     }
 }
 
