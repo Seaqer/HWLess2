@@ -2,6 +2,9 @@ package com.sbt;
 
 public class Main {
 
+
+
+
     public static void main(String[] args) {
 	// write your code here
         Person manIgor = new Person(true,"Igor");
@@ -14,6 +17,12 @@ public class Main {
         manIgor.marry(womanElise);
         manEgor.marry(manIgor);
         //commit
+
+        //TODO: adequate checks are needed.
+        //TODO: like this:
+        if(manIgor.marry(null)){
+            System.out.println("ERROR: manIgor.marry(null)");
+        }
     }
 }
 
