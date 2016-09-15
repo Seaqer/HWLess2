@@ -21,12 +21,12 @@ class Person {
      * @return - returns true if this person has another gender than passed person and they are not husband and wife, false otherwise
      */
     public boolean marry(Person person) {
-        if (person == null || man == person.man || spouse == person) return true; //TODO: return false
-        if (spouse != null) spouse.divorce(); //TODO: just divorce()
-        if (person.spouse != null) person.divorce(); //TODO: extra condition
+        if (person == null || man == person.man || spouse == person) return false;
+        divorce();
+        person.divorce();
         person.spouse = this;
         spouse = person;
-        return false; //TODO: return true
+        return true;
     }
 
     /**

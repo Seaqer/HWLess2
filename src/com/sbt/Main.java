@@ -3,24 +3,32 @@ package com.sbt;
 public class Main {
 
 
-
-
     public static void main(String[] args) {
-	// write your code here
-        Person manIgor = new Person(true,"Igor");
-        Person womanLiza = new Person(false,"Liza");
-        Person womanElise = new Person(false,"Elise");
-        Person manEgor = new Person(true,"Elise");
-        manIgor.marry(womanLiza);
-        manIgor.marry(womanLiza);
-        womanElise.marry(manEgor);
-        manIgor.marry(womanElise);
-        manEgor.marry(manIgor);
-        //commit
+        Person manIgor = new Person(true, "Igor");
+        Person womanLiza = new Person(false, "Liza");
+        Person womanElise = new Person(false, "Elise");
+        Person manEgor = new Person(true, "Elise");
 
-        //TODO: adequate checks are needed.
-        //TODO: like this:
-        if(manIgor.marry(null)){
+        if (!womanElise.marry(manEgor)) {
+            System.out.println("ERROR: !womanElise.marry(manEgor)");
+        }
+
+        if (!manIgor.marry(womanLiza)) {
+            System.out.println("ERROR: !manIgor.marry(womanLiza)");
+        }
+
+        if (manIgor.marry(womanLiza)) {
+            System.out.println("ERROR: manIgor.marry(womanLiza)");
+        }
+
+        if (!manIgor.marry(womanElise)) {
+            System.out.println("ERROR: !manIgor.marry(womanElise)");
+        }
+
+        if (manEgor.marry(manIgor)) {
+            System.out.println("ERROR: manEgor.marry(manIgor)");
+        }
+        if (manIgor.marry(null)) {
             System.out.println("ERROR: manIgor.marry(null)");
         }
     }
